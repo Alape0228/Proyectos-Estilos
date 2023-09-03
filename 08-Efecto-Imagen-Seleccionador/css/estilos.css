@@ -1,0 +1,44 @@
+body{
+    background: linear-gradient(#141e30,#243b55);
+    display: flex;
+}
+
+.contenedor{
+    display: flex;
+    width: 700px;
+    height: 530px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedor img{
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+/* 
+flex-grow: ;
+    *   Sirve y consiste en proporcionar el espacio no ocupado disponible a los elementos hijos o cajas, 
+        si al crear los elementos hijos o cajas sobra un espacio, este espacio sera ocupado por los hijos de manera proporcional si se toma como valor 1
+    *   Recordar que a donde pongamos esa propiedad es a donde le vamos a dar el espacio disponible si 
+        solo se lo colocamos a un hijo ese hijo poseera todo el espacio disponible
+*/
+
+
+
+.contenedor img:hover{
+    cursor: crosshair;
+    width: 100px;
+    object-fit:cover;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/* 
+    El truco para este tipo de efecto o estilos es la propiedad flex-grow: ;
+    Esta propiedad es aplicada a los elementos hijos del contenedor que cuente con la propiedad flex
+    y para que el efecto se vea mas notorio se deben poner las imagenes con un ancho de 0 para que la propiedad antes mencionada ocupe el espacio equitativamente
+    adicional contraste y mayor tamaño al efecto hover o imagen seleccionada
+*/

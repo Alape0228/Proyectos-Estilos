@@ -1,0 +1,123 @@
+body{
+    background-color: #000;
+}
+
+.contenedor{
+    width: 450px;
+    height: 550px;
+    position: relative;
+    transition: all 1.5s;
+}
+/* 
+    *   Definir tamaño del contenedor
+    *   Definirlo con position relative para que la imagen que se ponga en position absolute ponga 
+        por encima del contenedor
+    *   definitir transisiones de 1.5s
+*/
+
+
+.contenedor .imagen:first-child{
+    box-shadow: 0 60px 60px -60px #fff;
+    border-radius: 10px; 
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+/* 
+    *   Ubicamos la primera imagen indicando al sistema que nos busque la clase .contenedor y ya siendo
+        ubicada indicamos al sistema que de la clase imagen nos tome el primer hijo
+    *   se le aplica un efecto de sombra en la parte inferior de color blanco
+    *   Se le aplica efecto de contorno redondo y object-fit: cover; con el fin de que la imagen 
+        quede con buena resolucion dentro del contenedor
+    *   Finalmente indicamos que ocupe el tamaño maximo del contenedor
+*/
+
+
+.contenedor .imagen:last-child{
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    inset: 0 0;
+    object-fit: contain;
+    margin: auto;
+    transform: translateY(30%);
+    transition: all 1.5s;
+    opacity: 0 ;
+}
+/* 
+    *   Ubicamos la ultima o segunda imagen indicando al sistema que nos busque la clase .contenedor y 
+        ya siendo ubicada indicamos al sistema que de la clase imagen nos tome el ultimo hijo
+    *   Como esta segunda imagen se va mostrar mas pequeña se indica que ocupe el 60% del contenedor
+    *   Se indica que sea de position absolute para que se ponga por encima del contenedor
+    *   Le indicamos que tenga opacity 0 para que el elemento se oculte y no se vea
+    *   usamos la propiedad inset: 0 0; que es lo mismo que indicar al sistema que el elemento este 
+        en top:0 y left:0
+    *   como el elemento esta en position absolute se puede poner margin auto y se centrara
+    *   En este caso se usa object-fit: contain; y no cover para que la resolucion sea la mas optima 
+        y esta ves no interesa que tome todo el ancho del contenedor
+    *   Se usa transform: translateY(30%); para mover el elemento un poco hacia abajo
+*/
+
+
+.contenedor:hover{
+    transform: 
+    perspective(450px)
+    rotateX(10deg);
+}
+/* 
+    *   En el momento en que el curso se pare encima del contenedor aplicara los efectos
+    *   Para dar un efecto de que el contenedor ira hacia arriba usamos el efecto transform:
+    *   rotatex debe ir de la mano con perspective para dar el efecto
+*/
+
+.contenedor::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 10%,
+        rgba(209, 57, 57, 0.5)50%,
+        rgb(0, 0, 0)95%
+    );
+    opacity: 0;
+    transition: all 1.5s;
+}
+/* 
+    *El content es obligatorio por lo cual lo dejaremos vacio
+    *Le daremos tamaño y forma como si fuese un caja de posicion adsolute abajo
+    *Aplicamos un linea gradient para estilos 
+    *Aplicamos opacity:0; para ocultarlo
+    *Aplicamos transition:all 1.5s para cuando querramos usarlo
+
+background: linear-gradient(to bottom, transparent 10%, rgba(209, 57, 57, 0.5)50%, rgb(0, 0, 0)95%);
+    1- El efecto ira hacia abajo
+    2- se aplicara 3 lineas de efectos (transparente, negro un poco transparente y negro)
+    3- recordar que los 3 colores ocupan tamaños diferentes pero todos con referencia al 100%
+    4-  transparente de 0 a 10%
+        rojo de 0 a 50%
+        negro de 0 a 95%
+*/
+
+
+.contenedor:hover::before{
+    opacity: 1;
+}
+
+.contenedor:hover img:last-child{
+    opacity: 1;
+    transform: translateY(10%);
+
+}
+
+/* 
+    Finalmente mostramos el before y la segunda imagen y esta a su ves moviendose un poco hacia arriba
+
+*/
+
+
+/* 
+Recordar que se puede poner un borde degradado con linear gradient 
+*/

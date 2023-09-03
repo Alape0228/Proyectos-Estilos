@@ -1,0 +1,123 @@
+/*
+Colores
+  Tarjetas
+    Red: hsl(0, 78%, 62%)
+    Cyan: hsl(180, 62%, 55%)
+    Orange: hsl(34, 97%, 64%)
+    Blue: hsl(212, 86%, 64%)
+  Sombra
+    Dark Blue: hsl(240, 25%, 50%) al 20% de opacidad;
+  Texto
+    Grey: hsl(229, 6%, 66%)
+  Fondo de la tarjeta y del background
+    White: hsl(0, 0%, 93%)
+
+Fuente de la página
+  https://fonts.google.com/specimen/Poppins
+  Estilos 200, 400 y 600
+*/
+
+/* 
+    font-weight: 100; 
+    negrita o negrilla el grosor como tal de la letra  
+    
+    *{box-sizing: border-box;}
+        Sirve para que el padding se calcule de manera interna
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family:sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+.cabecera{
+    height: 22vh;
+    text-align: center;
+}
+/* h1 = titulo titulo-pagina */
+/* h2 = titulo */
+.titulo{
+    font-size: 26px  ;
+    font-weight: 600;
+}
+.titulo1{
+    font-weight: normal;
+    margin: 0;
+    padding: 11px 0 0;
+}
+.titulo2{
+    margin: 11px 0 11px;
+}
+
+.texto-gris{
+    color: hsl(229, 6%, 66%);
+}
+
+.texto-inicial{
+    margin: 5px;
+    font-size: 13px;
+}
+/* -------------------------------------- Tarjeta  -------------------------------------- */
+.contenedor{
+    height: 78vh;
+    position: relative;
+}
+
+.tarjeta{
+    width: 300px;
+    height: 190px;
+    background-color: hsl(0, 0%, 93%);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px hsl(240, 25%, 50%);
+    padding: 20px;
+}
+
+/* Sombra
+    Dark Blue: hsl(240, 25%, 50%) al 20% de opacidad; */
+
+.tarjeta1{
+    position: absolute;
+    left: 39%;
+    top: 6%;
+    border-top: 5px solid hsl(0, 78%, 62%);
+}
+
+.tarjeta2{
+    position: absolute;
+    left: 10%;
+    bottom: 30%;
+    border-top: 5px solid hsl(180, 62%, 55%);
+}
+
+.tarjeta3{
+    position: absolute;
+    right: 10%;
+    bottom: 30%;
+    border-top: 5px solid hsl(212, 86%, 64%);
+}
+
+.tarjeta4{
+    position: absolute;
+    left: 39%;
+    bottom: 6%;
+    border-top: 5px solid hsl(34, 97%, 64%);
+}
+
+.tarjeta-titulo{
+    margin: 0;
+}
+
+.img{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.tarjeta-texto{
+    font-size: 13px;
+}

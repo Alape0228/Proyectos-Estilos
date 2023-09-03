@@ -1,0 +1,49 @@
+body{
+    background: linear-gradient(#141e30,#243b55);
+    margin: 1em;
+}
+
+img{
+    max-width: 100%;
+    margin-bottom: 15px;
+    outline: 2px solid #fff;
+    outline-offset: -5px;
+}
+
+.galeria{
+    columns: 5 250px;
+    column-gap: 15px;
+}
+
+
+/* 
+    outline-offset: -10px;
+        Es un tipo de borde que no ocupa espacio como el borde se debe poner despues del outline con el fin de dar el efecto interno
+
+    column-gap: 15px;
+        Para dar espacio entre cada una de las columnas
+        
+    No funciona row-gap para dar un tipo de margen entre las filas por lo que se da un margin-bottom a cada una de las imagenes
+
+    columns: 5 250px;
+        * Especifica que son 5 columnas las que se deben crear de 250px
+        * Idica que las columnas tienen como minimo minimo un ancho de 250px esto quiere decir que si la pantalla NO soporta 5 columnas de 250px = 1250px no se creeran 5 columnas si no las que puedan caber
+        * Si por el contrario las columnas tienen mas espacio para aprovechar lo aprovecharan y seran de un tamaño mayor al de 250px
+        * los divs internos o elementos hijos se vuelven elementos de bloque 
+
+    max-width: 100%;
+        * Las imagenes o contenedores hijos al darles un tamaño de 100% trataran de ocupar el maximo de su contenido en lo ancho que le permita la columna estan limitados por la columna asi que esto les permite hacer responsive
+
+*/
+
+
+/* 
+NOTAS:
+    Galeria de fotos Masonry Layout O Pinterest Layout, Con Css Sin javascrip
+        1- Usar ouline por que borde dañaria el diseño
+        2- Se recomienda usar display-block para quitar margen fantasma
+        3- Este tipo de galerias no requiere librerias ni javascrip
+        4- No es posible manipular las imagenes para cuadrarlas en lugar que gusten mas, esto debido a que el sistema las acomoda automaticamente
+        5- Tiene ventaja en compatilibidad total con los demas navegadores
+        6- Tiene Responsive y con muy poco codigo css
+*/

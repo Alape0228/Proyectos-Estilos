@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #F8F8F8;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+/* 
+    1-  Se especifica el 100% del ancho y un poco solo de altura
+    2-  fondo de color blanco
+    3-  Para esta ocacion display flex es mas indicando
+    4-  para asi mismo aplicar propiedades como justify-content: space-around; que se le aplica a sus dos 
+        hijos logo-titulo y nav que se separaran uno del otro
+    5-  align-items: center; para alinear los hijos de manera centrada en sentido vertical   
+*/
+
+.logo-titulo{
+    color: rgb(44,44,44);
+    font-size: 24px;
+}
+/* 
+    1-  Color Texto
+    2-  Tamaño fuente de la letra
+*/
+
+
+.nav ol{
+    display: flex;
+    list-style: none;
+}
+/* 
+    1-  display: flex; Esto con el fin de darle propieades a la lista de manera horizontal ya que sus 
+        contenedores o elementos hijos se volveran bloques y estaran juntas unas de las otras 
+    2-  list-style: none; Esto con el fin de quitar por defecto el estilo de * o numeral de la lista
+*/
+
+
+.nav ol li{
+    margin: 16px;
+}
+/* 
+    1-  margen entre cada una de los ol
+*/
+
+
+.nav ol li a{
+    text-decoration: none;
+    padding: 0.2em 1.2em 0.9em 1.2em;
+    border-radius: 10px 10px 0 0;
+    color: rgb(39,39,39);
+    transition: all .4s;
+    position: relative;
+    z-index: 1;
+
+}
+/* 
+    1-  como son un links se les quita el efecto subrayado que tiene con text-decoration: none;
+    2-  Espacio interno con padding
+    3-  borde redondo solo en la parte superior
+    4-  color de texto de los links
+    5-  position: relative; es muy necesario para que cuando posiciones el before la etiqueta a como es su contenedor padre al poner el before con adsolute estara sujeto al contenedor padre
+    6-  z-index: 1; Importante para que se superponga a los estilos del elemento hijo
+*/
+
+
+.nav ol li a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    border-radius: 10px 10px 0 0;
+    transform-origin: bottom;
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    transform: scaleY(0.05);
+    transition: transform 0.6s;
+    z-index: -1;
+}
+/* 
+    1-  content: ""; obligatorio asi no lleve contenido
+    2-  position: absolute; para poder posicionar y mover el elemento dentro de su contenedor a su antojo
+    3-  bottom y left para posicionarlo abajo a la izquierda
+    4-  solo se requiere ancho el 100% y un poco de altura
+    5-  borde radios igual que su padre
+    6-  transform-origin: bottom; importante para que la transormacion inice desde abajo
+    7-  transform: scaleY(0.05); situarla verticalmente
+    8-  efecto linear-gradient  y z-index muy importante para posicionarse atras del elementro padre
+*/
+
+.nav ol li a:hover::before{
+    transform: scaleY(1.1);
+}
+.nav ol li a:hover{
+    color: white;
+}
+
+img{
+    width: 500px;
+    height: 500px;
+}

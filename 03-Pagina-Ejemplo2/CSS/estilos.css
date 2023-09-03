@@ -1,0 +1,183 @@
+/*
+Colores
+  dark-purple: hsl(300, 43%, 22%)
+  pink:hsl(333, 80%, 67%) en verified
+  purple: hsl(303, 10%, 53%)
+  soft-white: hsl(300, 24%, 96%)
+  background-color: hsl(0, 0%, 90%);
+
+Fuente de la página
+  https://fonts.google.com/specimen/Karla
+  Estilos 200 y 400
+*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(0, 0%, 90%);
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.9rem;
+}
+.img-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+}
+.img-bottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 800px;
+    height: 410px;
+}
+
+.contenedor{
+    width: 80%;
+    height: 70vh;
+    position: relative;
+    margin: 120px 0 50px 100px;
+}
+
+/* ////////////////////////////////////// Encabezado ////////////////////////////////////// */
+.encabezado{
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+.conjunto-encabezado{
+    width: 380px;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.conjunto-encabezado-titulo{
+    font-size: 2.0rem;
+    color: hsl(300, 43%, 22%);
+}
+.conjunto-encabezado-texto{
+    color: hsl(303, 10%, 53%);
+    margin: 25px 0;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.conjunto-estrellas{
+    width: 420px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.estrellas{
+    background-color: white;
+    height: 60px;
+    width: 360px;
+    border-radius: 8px;
+    position: absolute;
+    padding: 12px 12px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+.estrellas:nth-child(2){
+    top: 78px;
+    left: 30px;
+}
+.estrellas:nth-child(3){
+    bottom: 0px;
+    left: 60px;
+}
+
+.estrella{
+    color: #ccc;
+    /* color: #000; */
+    font-size: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.estrella:hover, .estrella.checked{
+    color: gold;
+}
+
+
+.conjunto-estrellas-letra{
+    margin: 0 15px;
+    color: hsl(303, 10%, 53%);
+}
+.estrellas span{
+    position: absolute;
+    right: 0px;
+}
+.estrella{
+    height: 15px;
+    width: 15px;
+}
+
+/* ////////////////////////////////////// Encabezado ////////////////////////////////////// */
+
+.tarjetas{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+}
+
+.tarjeta{
+    background-color: hsl(300, 43%, 22%);
+    width: 300px;
+    height: 170px;
+    position: absolute;
+    border-radius: 10px;
+    padding: 30px;
+}
+.tarjeta:hover{
+    width: 320px;
+    height: 190px;
+}
+
+.tarjeta1{
+    top: 0;
+    left: 0;
+}
+.tarjeta2{
+    top: 15px;
+    left: 395px;
+}
+.tarjeta3{
+    bottom: 0;
+    right: 0;
+}
+.contenedor-tarjeta-img{
+    width: 20%;
+    position: relative;
+}
+.img{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.contenedor-tarjeta-tiulo{
+    left: 90px;
+    top: 30px;
+    position: absolute;
+}
+.tarjetas-titulo{
+    color: hsl(300, 24%, 96%);
+}
+.tarjetas-subtitulo{
+    color: hsl(333, 80%, 67%);
+    margin-top: 9px;
+
+}
+.tarjetas-texto{
+    font-size: 13px;
+}

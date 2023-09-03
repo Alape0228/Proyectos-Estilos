@@ -1,0 +1,274 @@
+body{
+    height: 100vh;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30,#243b55);
+}
+
+:root{
+    --color-texto: #fff;
+    --color-texto-efecto :#03e9f4;
+}
+
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+/* 
+///////////////////////////////// Efectos sobre el contenedor /////////////////////////////////
+    1- Se decide poner el contenedor en absolute para jugar con las demas propiedades en relative
+    2- con top y lef se acomoda en la mitad
+    3- con transform ubicamos el elemento mas al centro
+    4- con box-shadow le aplicamos sombra
+*/
+
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: var(--color-texto);
+    text-align: center;
+}
+/* 
+///////////////////////////////// Efectos sobre el titulo /////////////////////////////////
+    1- solo se aplica margen se centra y se coloca de color blanco
+    2- tener en cuenta que se aplica estilos de manera en que el sistema busca todas las clases que tengan como nombre .login-box pero solo se dara efecto a los h2 
+*/
+
+
+.login-box .user-box {
+    position: relative;
+} 
+/* 
+///////////////////////////////// Efectos sobre los divs /////////////////////////////////
+    1- Se aplica efecto position relative esto con el fin de darle estilos a los label de usarname y password para que de esta manera al aplicarles un lefy se posiciones ligeramente encima y a la izquierda de los inputs, con esto se consigue el efecto de label encima de los inputs para luego dar estilos
+*/
+
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--color-texto);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--color-texto);
+    outline: none;
+    background: transparent;
+}
+/* 
+///////////////////////////////// Efectos sobre los inputs /////////////////////////////////
+    1- se establece el ancho de 100% para que al tomar el borde inferior se pueda apreciar mejor
+    2- se incrementa el padding esto con el fin de ver el input mas alto
+    3- color blanco al texto que ira dentro de los inputs e incremento de tamaño de la fuente
+    4- se elimina los bordes que cuenta el input y luego se agrega el borde inferior
+    5- Finalmente se elimina el outline que aparece al seleccionar el input y se pone transparente para un mejor efeto
+    6- tener en cuenta que se aplica estilos a los inputs de manera en que el sistema busca todas las clases que tengan como nombre .login-box y luego busca los de .user-box y finalmente solo se dara efecto a los inputs
+*/
+
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--color-texto);
+    /* pointer-events: none; */
+    transition: .5s;
+}
+/* 
+///////////////////////////////// Efectos sobre los label /////////////////////////////////
+    1- se aplica absolute con el fin de poder mover el label a la izquierda y un poco mas arriba de los inputs
+    2- simplemente se colocan sobre color blanco se expande un poco el padding y ka fuente
+    3- con transform ubicamos el elemento mas al centro
+    4- con box-shadow le aplicamos sombra
+    5- tener en cuenta que se aplica estilos a los inputs de manera en que el sistema busca todas las clases que tengan como nombre .login-box y luego busca los de .user-box y finalmente solo se dara efecto a los inputs
+*/
+
+
+ .login-box .user-box input:focus ~  label{
+    top: -20px;
+    left: 0;
+    color: var(--color-texto-efecto);
+    font-size: 12px;
+}
+/* 
+///////////////////////////////// Efectos focus sobre los label /////////////////////////////////
+    1-  Recordar que los efectos focus se usa mas que todo sobre los inputs donde se da mas funcionalidad
+    2- el sistema buscara entre .login-box .user-box los inputs para finalmente dar efecto a los label de la misma ruta
+    3- como el efecto se dara a los label indicamos que se desplace un poco hacia arriba y se pongan un poco mas pequeño con distinto color para dar el efecto de que se ponen arriba mas pequeño indicando espacio para escribir
+*/
+
+
+.login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--color-texto-efecto);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+/* 
+///////////////////////////////// Efectos sobre la etiqueta a /////////////////////////////////
+    1- Se da tamaño color y se posiciona de manera relative  
+    2- recordar que se usa text-decoration: none; para eliminar los efectos de link y no se vea subrayado
+    3- recordar que se usa text-transform: uppercase; para poner todo en mayuscula
+    4- se pone margen y espacio entre las letras
+*/
+
+
+.login-box a:hover {
+    background: var(--color-texto-efecto);
+    color: var(--color-texto);
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--color-texto-efecto),
+                0 0 15px var(--color-texto-efecto),
+                0 0 30px var(--color-texto-efecto),
+                0 0 60px var(--color-texto-efecto);
+}
+/* 
+///////////////////////////////// Efectos hover sobre la etiqueta a /////////////////////////////////
+    1- color de fondo  
+    2- Color de texto
+    3- borde
+    4- sombrado
+*/
+
+
+/* //////////////////////////////// Efectos sobre el boton usando span //////////////////////////////// */
+.login-box a span {
+    position: absolute;
+    display: block;
+}
+/* 
+    1- todos los span de position absolute y display block  
+*/
+
+
+.login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-texto-efecto));
+    animation: boton-animado1 1s linear infinite;
+}
+@keyframes boton-animado1 {
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+/* 
+//////////////////////////////// Efectos primer linea superior del boton ////////////////////////////////
+    1- Se usa el span como un bloque para transformarlo despues en una linea delgada de 2px de alto pero de todo el ancho del boton,  
+    2- se da como fuente de color a esta linea medio transparente y medio del color deseado esto con el fin de darle el efecto de trayectoria
+    3- se posiciona totalmente en la parte superior por que seria la linea que le dara efecto superior
+    4- y se posiciona totalmente a la izquierda 100% para ocultarlo y al usar la animacion empiece desde lo oculto -100% hasta lo totalmente visible 
+    5- recordar que la propiedad linear en las animaciones le dan un toque mas de lentitud e las transiciones
+*/
+
+
+.login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--color-texto-efecto));
+    animation: boton-animado2 1s linear infinite;
+}
+@keyframes boton-animado2 {
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+
+
+.login-box a span:nth-child(3) {
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(180deg, transparent, var(--color-texto-efecto));
+    animation: boton-animado3 1s linear infinite;
+}
+@keyframes boton-animado3 {
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+.login-box a span:nth-child(4) {
+    left: 0;
+    bottom: -100%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--color-texto-efecto));
+    animation: boton-animado4 1s linear infinite;
+}
+@keyframes boton-animado4 {
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+
+
+
+/* 
+///////////////////////////////// Consejos para las pseudoclases /////////////////////////////////
+
+    Efectos al label con focus :
+    1-  si se dieron efectos al label y al input desde un principio hayandolo en el sistema de la 
+        siguiente forma:
+        .login-box .user-box label {
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: var(--color-texto);
+
+    2-  Cuando se use la pseudoclase focus no puedes darle efectos al label hayandolo en el sistema 
+        simplemente como label o simplemente como input, debera ser buscado de la misma manera .login-box .user-box label o .login-box .user-box input
+*/
+
+
+/* 
+///////////////////////////////// Consejos para las pseudoclases /////////////////////////////////
+
+    ~
+    1-  Se usa el signo anterior para referirse como a un hermano al dar efectos de pseudo clases, puesto a que el input y el label son elementos hermanos, primero le indicamos al sistema que busque un apartado que busquen en las clases .login-box las clases .user-box y luego de ahi busque el input sobre quien activara el estilo y con el signo ~ le indicamos que el efecto se dara al hermano
+        .login-box .user-box input:focus ~  label{
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+*/
+
+
+

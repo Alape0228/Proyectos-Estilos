@@ -1,0 +1,51 @@
+h1{
+    display: block;
+    font-family: sans-serif;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 44ch;
+
+    animation: escribir 3s steps(44), parpadeo .5s infinite;
+    overflow: hidden;
+}
+
+@keyframes escribir {
+    0% {
+        width: 0;
+    }
+}
+
+@keyframes parpadeo {
+    100% {
+        border-color:transparent ;
+    }   
+}
+
+/* 
+    width: 44ch;
+        Es el ancho que tendra el contenido que es igual a los caracteres que tiene la frase
+    
+    white-space: nowrap;
+        como el ancho del contenido empezara siendo 0 e ira incrementando hara que la letra conforme vaya saliendo se vaya desbordando, con esta propiedad exigimos u obligamos al sistema de que no se desborde o se vaya para abajo si no que se mantenga en la misma linea
+
+    border-right: 4px solid;
+        Lo que se usara como efecto para la maquina de escribir
+
+    overflow: hidden;
+        Se oculta el contenido que se va mostrando a medida de que se realiza el efecto
+
+    steps(44)
+        Efecto aplicado a la animacion para que no se vea de manera brusca la forma de escribri
+*/
+
+
+
+
+/*
+@keyframes escribir {0% {width: 0;}} 
+    *Como al inicio el contenedor mide 0% de ancho su borde derecho hace el efecto de la maquina de escribir se posicionara justamente al inicio y empezara a crecer justamente hasta su 100% de ancho
+
+@keyframes parpadeo {100% {border-color:transparent;}}
+    *Esto es para que el borde se vuelva transparente, y como se repite cada 0.5 seg hace el efecto de maquina de escribir con el parpadeo de manera infinita
+
+*/

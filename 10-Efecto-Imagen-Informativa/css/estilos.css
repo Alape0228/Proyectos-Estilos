@@ -1,0 +1,80 @@
+body{
+    background: linear-gradient(#141e30,#243b55);
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 500px;
+    width: 400px;
+    height: 500px;
+    margin: 60px auto;    
+}
+/* 
+/////////////////////////////////////// Estilos para el contenedor ///////////////////////////////////////
+1-  display: grid; esto es con el fin de ponerle propiedades a los elementos hijos
+2-  Se determina el ancho y el alto que tendra la columna y la fila
+3-  margen
+*/
+
+
+.contenedor .imagen{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+/* 
+/////////////////////////////////////// Estilos para el imagen ///////////////////////////////////////
+1-  tamaño de ancho y alto del 100% para que no se sobrepase de la caja que la contiene
+2-  object-fit: cover; para que la resolucion de la imagen no sea afectada
+3-  grid-column: 1/2; grid-row: 1/2; con esto indicamos que la imagen se posicionara dentro de la fila y 
+    columna creada
+*/
+
+
+.contenedor::after{
+    content: "Soy Zoro de One Piece";
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(92, 223, 110, 0.404);
+    color: #fff;
+    display: grid;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top right);
+    transition: clip-path .4s;
+}
+/* 
+/////////////////////////////// Estilos para el after hijo del contenedor ///////////////////////////////
+1-  para que este funcione requiere de content:""; para finalmente darle propiedades
+2-  se indica a este hijo que ocupe exactamente el mismo espacio que ocupo la imagen con su ancho y alto
+3-  se acomoda el color del fondo y del texto 
+4-  si no pusiesemos el display grid en el contenedor no podemos indicarle a sus dos hijos que ocupen el 
+    mismo espacio con grid-column: 1/2; grid-row: 1/2; y de esta manera poder reutilizar el codigo las veces que querramos que configurar una y otra ves con position 
+5-  Al poner display grid al after podemos ajustar el contenido a gusto
+6-  se modifica tamaño de la letra 
+7-  Finalmente usamos la propiedad clip-path: circle(150px at top right);
+        Es la mas complicada y se usa con el fin de convetir su espacio en un circulo donde su primer parametro es el tamaño at y despues la posicion que se desea poner, se usa con el fin de al usar hover este elemento crezca y se muestre
+*/
+
+
+.contenedor:hover::after{
+    clip-path: circle(150% at top right);
+}
+/* 
+/////////////////////////////////////// Estilos para el imagen ///////////////////////////////////////
+1-  Se aplica estilos tipo hover al cursor pasar por el contenedor donde se aplicaran al after
+2-  El elemento finalmente crece y pasa de tener un 0px a 150% de tamaño
+*/
+
+
+
+/* 
+    El truco esta en que after al ser un hijo del contenedor div que cuenta con las propiedades de display grid, este hijo after se podra posicionar de la mejor manera, sin embargo es necesario posicionar este hijo desde la linea 0 a 1 de columna y de la misma manera de fila y finalmente usar clip-path: circle(0 at top right); para que el elemento se esconda en la parte superior derecha con 0 de tamaño y luego hacerlo crecer con hover
+*/

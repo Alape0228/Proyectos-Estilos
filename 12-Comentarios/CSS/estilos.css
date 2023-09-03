@@ -1,0 +1,103 @@
+/*
+Colores
+  purple: hsl(263, 55%, 52%)
+  grey: hsl(217, 19%, 35%)
+  dark-blue: hsl(219, 29%, 14%)
+
+  El texto de las tarjetas tiene una opacidad del 70%
+  La información del usuario tiene una opacidad del 50%
+
+Fuente de la página
+  https://fonts.google.com/specimen/Barlow+Semi+Condensed
+  Estilos 500 y 600
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin: 0;
+    color: #ffffff70;
+    background: linear-gradient(#141e30,#243b55);
+}
+
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.sub-contenedor01{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.sub-contenedor02{
+    width: 23%;
+    height: 100%;
+}
+
+.tarjeta{
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tarjeta-tarjetas1{
+    background-color:hsl(263, 55%, 52%);
+    height: 49%;
+    width: 65%;
+    position: relative;
+}
+.detalle{
+    position: absolute;
+    left: 410px;
+    top: 55px;
+}
+
+.tarjeta-tarjetas2{
+    background-color:hsl(217, 19%, 35%);
+    height: 49%;
+    width: 33%;
+}
+.tarjeta-tarjetas3{
+    background-color: #fff;
+    height: 49%;
+    width: 33%;
+}
+.tarjeta-tarjetas4{
+    background-color: hsl(219, 29%, 14%);
+    height: 49%;
+    width: 65%;
+}
+.tarjeta-tarjetas5{
+    background-color:#fff;
+    height: 100%;
+    width: 100%;
+}
+
+
+.texto-blanco{color: white;}
+.texto-gris{color: hsl(217, 19%, 35%);}
+.texto-negro{color: #000}
+.tarjeta-parrafo2{margin: 0; font-size: 16px;}
+.perfil{border-radius: 50%;}
+.tarjeta-contenedor-parrafo1{position: relative;}
+.tarjeta-parrafo1-letra-mayor{ 
+    font-size: 23px; 
+    font-weight: 600; 
+    margin: 0; 
+}
+.tarjeta-contenedor-img{
+    display: flex;
+    align-items: center;
+    width: 80px;
+}

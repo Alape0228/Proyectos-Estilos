@@ -1,0 +1,130 @@
+/* hsl(227, 10%, 46%) */
+/* 
+    position: absolute;
+        Recordar que sirve para tomar el elemento sobreponerlo en la parte encima o superior de los elementos y moverlo a voluntad arriba abajo izquierda y derecha
+
+    overflow: hidden;
+        Recordar que sirve para que el contenido que se desborde no se vea.
+
+    position: relative;
+        En el concepto de apilamiento el relative logra superponerse a los elementos con la propiedad absolute
+
+    margin-left: auto; margin-right: auto;
+        Recordar que sirve para centrar un elemento de manera automatica
+    
+
+*/
+
+body{
+    background-color: hsl(185, 75%, 39%);
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 17px;
+    
+}
+
+.circulo {
+    position: absolute;
+}
+
+.circulo-superior{
+    top: -500px;
+    left: -300px;
+}
+
+.circulo-inferior{
+    bottom: -650px;
+    right: -350px;
+}
+
+.tarjeta{
+    position: relative;
+    top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 450px;
+    border-radius: 30px;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+/* 
+    position: relative;
+        Debido a que la tarjeta viene con la propiedad position: relative; las demas elementos con la propiedad absolute van a ser con referencia a la tarjeta y no al body 
+*/
+
+
+
+.tarjeta-cabecera{
+    background-color: lightslategray;
+    height: 30%;
+    position: relative;
+    text-align: center;
+}
+.imgfondo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; 
+}
+.imgvictor{
+    position: absolute;
+    border-radius: 50%;
+    top: 90px;
+    left: 150px;
+    border: 5px solid white;
+}
+/* 
+    position: relative;
+
+
+        Se recomienda poner position relative en tarjeta-cabecera con el fin de poder centrar los elementos 
+        y con respecto a las imagenes es necesario usar el absolute para trabajarlo sobre el relative 
+*/
+
+.tarjeta-contenido{
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    text-align: center;
+    padding: 75px 0;
+}
+.tarjeta-texto-gris{
+    color: hsl(227, 10%, 46%);
+}
+
+.tarjeta-piepagina{
+    /* background-color: gray; */
+    border-top: 2px solid hsl(227, 10%, 46%);
+    height: 30%;
+    width: 100%;
+    position: absolute;
+    top: 70%;   
+    left: 0;
+    text-align: center;
+}
+.tarjeta-piepagina-contenedor{
+    display: inline-block;
+    width: 27%;
+    height: 80%;
+    margin: 20px 10px;
+}
+
+/* 
+    Display:
+        la propiedad Display nos sirve para cambiar el contexto de los elementos dentro del navegador
+        bloque: toma todo el ancho de la pagina
+        linea: toma de espacio solo lo que le corresponde al texto
+
+        display: inline-block;  
+            hace que el elemento sea de linea pero admite medidas y margenes verticales
+*/
+
+
+.tarjeta-piepagina-numero{
+    font-size: 22px;
+    margin: 0;
+}

@@ -1,0 +1,117 @@
+/*
+Colores
+  cyan: hsl(179, 62%, 43%)
+  lime: hsl(71, 73%, 54%)
+  grey: hsl(204, 43%, 93%)
+  light-blue: hsl(218, 22%, 67%)
+
+Fuente de la página
+  https://fonts.google.com/specimen/Karla
+  Estilos 200 y 400
+*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: black;
+    color: #fff;
+}
+
+.letra{
+    font-family: 'Karla', sans-serif;
+}
+
+.tarjeta{
+    background-color: lightcoral;
+    width: 800px;
+    height: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    position: relative;
+}
+
+.tarjeta1{
+    background-color: #fff;
+    height: 220px;
+    width: 100%;
+    padding: 30px 40px 30px;
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tarjeta1-titulo1{
+    color: hsl(179, 62%, 43%);
+    margin-bottom: 20px;   
+}
+.tarjeta1-titulo2{
+    color: hsl(71, 73%, 54%);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.tarjeta1-texto{ 
+    color: hsl(218, 22%, 67%);  
+}
+
+/* //////////////////////////////// Tarjeta2 //////////////////////////////// */
+
+.tarjeta2{
+    background-color: hsl(179, 62%, 43%);
+    height: 280px;
+    width: 400px;
+    padding: 50px 40px 30px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+/* .tarjeta2-titulo{
+    margin-bottom: 20px;   
+} */
+.tarjeta2-texto{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.tarjeta2-precio1{
+    font-size: 40px;
+}
+.tarjeta2-texto1{
+    font-size: 25px;
+    color: hsl(218, 22%, 75%);  
+}
+.tarjeta2-texto2{
+    font-size: 18px;  
+}
+.tarjeta2-enlace{
+    text-align: center;
+    background-color: hsl(71, 73%, 54%);
+    padding: 10px 130px;
+    border-radius: 7px;
+    position: absolute;
+    bottom: 30px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 5px 5px 15px hsl(218, 22%, 40%);
+}
+
+/* ///////////////////////////////////// Tarjeta 3 ///////////////////////////////////// */
+
+.tarjeta3{
+    background-color: hsl(179, 40%, 33%);
+    height: 280px;
+    width: 400px;
+    padding: 50px 40px 30px;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.tarjeta3-titulo{
+    margin-bottom: 30px;
+}
+.tarjeta3-texto{
+    font-weight: 100;
+}
